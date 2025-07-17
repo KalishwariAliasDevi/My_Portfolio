@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devi | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Loader Styling */
+    #page-loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(4px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .loader-text {
+      color: #4b0082;
+      font-size: 24px;
+      font-weight: 600;
+      animation: fade 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.6; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <a href="mailto:kalishwarialiasdevir@gmail.com" class="email-link">kalishwarialiasdevir@gmail.com</a>
+    <div class="social-icons">
+      <a href="https://github.com/KalishwariAliasDevi"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/kalishwarialiasdevi30/"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">Portfolio.</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutme.html">About Me</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h4 style="color: white;">Hi!</h4>
+    <h1 style="color: white;">I'm Devi!</h1>
+    <p class="subtext">
+      Aspiring <strong>Data Analyst</strong> turning data noise into meaningful answers<br>
+      that help you act smarter, faster.
+      
+    </p>
+    <a href="tools.html" class="btn">Here's More!</a>
+  </section>
+
+  <!-- Tools Section -->
+  <section id="contact" class="contact-section">
+    <h2>Let's Connect!</h2>
+    <div class="underline"></div>
+    <h2 style="font-size:larger; color: black; font-weight: normal; margin-bottom: 40px; font-family: 'Times New Roman', Times, serif;">My Tools</h2>
+    <div class="tech-stack">
+      <div class="icon-wrapper">
+        <span class="icon-label">Python</span>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      </div>
+      <div class="icon-wrapper">
+        <span class="icon-label">SQL</span>
+        <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="SQL" style="width: 80px; height: 80px; background-color: #1f1f2e; border-radius: 20px; padding: 15px;">
+      </div>
+      <div class="icon-wrapper">
+        <span class="icon-label">Pandas</span>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+      </div>
+      <div class="icon-wrapper">
+        <span class="icon-label">Matplotlib</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" alt="Matplotlib" style="width: 80px; height: 80px; background-color: #1f1f2e; border-radius: 20px; padding: 15px;">
+      </div>
+      <div class="icon-wrapper">
+        <span class="icon-label">Excel</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg" alt="Excel">
+      </div>
+      <div class="icon-wrapper">
+        <span class="icon-label">Power BI</span>
+        <img src="https://raw.githubusercontent.com/Microsoft/PowerBI-Icons/main/SVG/Power-BI.svg" alt="Power BI">
+      </div>
+    </div>
+  </section>
+
+  <!-- Loader -->
+  <div id="page-loader">
+    <div class="loader-text">Loading...</div>
+  </div>
+
+  <!-- Loader Script -->
+  <script>
+    document.querySelectorAll('a[href$=".html"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        const loader = document.getElementById('page-loader');
+        if (loader) {
+          loader.style.display = 'flex';
+          document.body.style.overflow = "hidden"; // prevent flicker
+          setTimeout(() => {
+            window.location.href = href;
+          }, 1000);
+        } else {
+          window.location.href = href;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Devi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Top Bar -->
+  <div class="top-bar">
+    <a href="mailto:yourmail@example.com" class="email-link">kalishwarialiasdevir@gmail.com</a>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+  <!-- Header -->
+  <div class="about-top-header">
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;"></div>
+    <div class="about-logo">Portfolio.</div>
+    <ul class="menu-bar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutme.html">About&nbsp; Me</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+ <style>
+  .menu-bar li a {
+  white-space: nowrap;
+}
+</style>
+
+
+  <!-- Project Title -->
+  <div class="projects-section">
+    <h2>Portfolio Projects</h2>
+    <div class="underline"></div>
+
+    <!-- Filter Tabs -->
+<div class="project-tabs">
+  <span class="tab-link active" data-filter="all">All</span>
+  <span class="tab-link" data-filter="python">Python</span>
+  <span class="tab-link" data-filter="sql">SQL</span>
+  <span class="tab-link" data-filter="powerbi">Power BI</span>
+  <span class="tab-link" data-filter="tableau">Tableau</span>
+  <a href="#" class="tab-link" data-filter="excel">Excel</a>
+</div>
+
+<!-- Project Cards -->
+<div class="project-grid">
+  <!-- Card 1 -->
+  <div class="project-card" data-category="excel">
+    <img src="image/finance.jpg" alt="Excel Dashboard" />
+    <div class="tag">EXCEL</div>
+    <a href="finance.html" style="color: black; font-weight: bold;"><h4>Finance Dashboard</h4></a>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="project-card" data-category="excel">
+    <img src="image/inventory.png" alt="Inventory Dashboard" />
+    <div class="tag">EXCEL</div>
+    <a href="inventory.html" style="color: black; font-weight: bold;"><h4>Inventory Dashboard</h4></a>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="project-card" data-category="excel">
+    <img src="image/sales di.jpg" alt="Sales Distribution Dashboard" />
+    <div class="tag">EXCEL</div>
+    <a href="salesdist.html" style="color: black; font-weight: bold;"><h4>Sales Distribution Dashboard</h4></a>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="project-card" data-category="powerbi">
+    <img src="image/salesa.jpg" alt="Sales Analysis Dashboard" />
+    <div class="tag">POWER BI</div>
+    <a href="salesa.html" style="color: black; font-weight: bold;"><h4>Sales Analysis Dashboard</h4></a>
+  </div>
+</div>
+
+<!-- JavaScript for Filtering -->
+<script>
+  const tabs = document.querySelectorAll('.tab-link');
+  const cards = document.querySelectorAll('.project-card');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Remove active class from all tabs
+      tabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+
+      const filter = this.getAttribute('data-filter');
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+</div>
+</body>
+</html>
