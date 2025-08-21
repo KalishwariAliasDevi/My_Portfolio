@@ -7,7 +7,19 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Highlight active link */
+    .navbar ul li a.active {
+      color: #ffffff;
+      font-weight: bold;
+      border-bottom: 2px solid #4b0082;
+    }
+
     /* Loader Styling */
     #page-loader {
       position: fixed;
@@ -19,19 +31,88 @@
       justify-content: center;
       align-items: center;
       z-index: 9999;
-      transition: all 0.3s ease-in-out;
     }
-
     .loader-text {
       color: #4b0082;
       font-size: 24px;
       font-weight: 600;
       animation: fade 1s ease-in-out infinite alternate;
     }
-
     @keyframes fade {
       from { opacity: 0.6; }
       to { opacity: 1; }
+    }
+
+    /* About Me Section Styling */
+    .about-wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+      flex-wrap: wrap;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .about-wrapper .about-left {
+      flex: 1 1 60%;
+      padding-right: 30px;
+    }
+
+    .about-wrapper .about-right {
+      flex: 1 1 35%;
+      background-color: #fff;
+    }
+
+    .about-wrapper h3 {
+      color: #3b0a75;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .edu-line {
+      width: 50px;
+      height: 3px;
+      background-color: #6c2bc9;
+      margin-bottom: 20px;
+    }
+
+    .about-wrapper p {
+      line-height: 1.8;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .about-wrapper strong {
+      color: #000;
+    }
+
+    .experience-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #6c2bc9;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .experience-btn:hover {
+      background-color: #53209b;
+    }
+
+    @media (max-width: 768px) {
+      .about-wrapper {
+        flex-direction: column;
+      }
+
+      .about-wrapper .about-left,
+      .about-wrapper .about-right {
+        flex: 1 1 100%;
+        padding: 0;
+      }
     }
   </style>
 </head>
@@ -46,39 +127,38 @@
     </div>
   </div>
 
+  
   <!-- Navbar -->
   <header>
     <div class="navbar">
-      <a href="index.html" class="logo">Portfolio.</a>
+      <a href="#home" class="logo">Portfolio.</a>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="aboutme.html">About Me</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About Me</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section id="home" class="hero">
     <h4 style="color: white;">Hi!</h4>
     <h1 style="color: white;">I'm Devi!</h1>
     <p class="subtext">
       Aspiring <strong>Data Analyst</strong> turning data noise into meaningful answers<br>
       that help you act smarter, faster.
-      
     </p>
-    <a href="tools.html" class="btn">Here's More!</a>
+    <a href="#tools" class="btn">Here's More!</a>
   </section>
 
   <!-- Tools Section -->
-  <section id="contact" class="contact-section">
-    <h2>Let's Connect!</h2>
+  <section id="tools" class="contact-section">
+    <h2>My Tools</h2>
     <div class="underline"></div>
-    <h2 style="font-size:larger; color: black; font-weight: normal; margin-bottom: 40px; font-family: 'Times New Roman', Times, serif;">My Tools</h2>
     <div class="tech-stack">
       <div class="icon-wrapper">
         <span class="icon-label">Python</span>
@@ -107,30 +187,269 @@
     </div>
   </section>
 
+  <!-- About Me Section -->
+  <section id="about">
+    <div style="background-color: #3b0a75; color: white; padding: 30px 40px; margin-bottom: 20px;">
+      <div style="text-align: center; margin-top: 10px;">
+        <h1 style="font-size: 36px; font-weight: 700; margin: 0;">This is Who I Am!</h1>
+      </div>
+    </div>
+
+    <div class="about-wrapper">
+      <div class="about-left">
+        <p style="font-weight: normal;font-size: 20px; font-family: 'Times New Roman', Times, serif;">
+          Hello! I'm <strong>Kalishwari alias Devi</strong>, a passionate Data Analyst driven by a deep curiosity for patterns, insights, and the power of data to transform decisions.
+        </p>
+        <p style="font-weight: normal;font-size: 20px; font-family: 'Times New Roman', Times, serif;">
+          My journey began with a fascination for numbers, eventually shaping into a strong academic foundation in Computer Science. Along the way, I earned recognition through distinction, certifications, and impactful academic work. Over the past year, I’ve explored real-world data challenges through internships, freelancing, and hands-on projects—transforming raw datasets into stories that matter.
+        </p>
+        <p style="font-weight: normal;font-size: 20px; font-family: 'Times New Roman', Times, serif;">
+          I’ve worked with tools like <strong>Excel</strong>, <strong>SQL</strong>, <strong>Python</strong>, and libraries like <strong>Pandas</strong> and <strong>NumPy</strong>. I enjoy building dashboards using <strong>Power BI</strong> and telling data stories that resonate with both technical and non-technical audiences. Whether it's cleaning messy datasets, scraping the web, visualizing trends, or optimizing performance, I approach every challenge with a creative, research-oriented mindset.
+        </p>
+        <p style="font-weight: normal; font-size: 20px;font-family: 'Times New Roman', Times, serif;">
+          My background in tutoring and research taught me how to break down complex problems and communicate clearly. From developing tools used in real business settings to handling projects across international teams, I’ve learned to think boldly, deliver confidently, and continuously adapt.
+        </p>
+        <p style="font-weight: normal;font-size: 20px; font-family: 'Times New Roman', Times, serif;">
+          Today, I’m focused on growing as a data analyst, building smart solutions, and contributing to meaningful projects. Thank you for visiting my portfolio — feel free to explore my work and connect if our paths align!
+        </p>
+      </div>
+
+      <div class="about-right">
+        <h3>Education</h3>
+        <div class="edu-line"></div>
+
+        <p><strong>MASTER OF SCIENCE IN COMPUTER SCIENCE</strong><br />
+          MSU UNIVERSITY (2023–2025)<br />
+          CGPA: 9.15 / 10</p>
+        <br />
+        <p><strong>BACHELOR OF SCIENCE IN COMPUTER SCIENCE</strong><br />
+          MSU UNIVERSITY (2020–2023)<br />
+          CGPA: 8.65 / 10</p>
+
+        <a href="#experience" class="experience-btn">Here’s My Experience!</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <!-- Experience Section -->
+<section id="experience" style="padding: 40px; background-color: #fff;">
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h2 style="font-size: 36px; font-weight: 700; color: #3b0a75;">Experience</h2>
+    <div style="width: 60px; height: 3px; background-color: #6c2bc9; margin: 10px auto;"></div>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+    <!-- Left Section -->
+    <div style="flex: 1 1 60%; padding-right: 30px;">
+      <h3 style="color: #3b0a75; font-size: 22px; font-weight: 600; margin-bottom: 10px;">
+        Data Analyst/Scientist (Freelance)
+      </h3>
+      <p style="font-size: 16px; color: #555; margin-bottom: 20px;">Feb 2025 – Present</p>
+      
+      <ul style="font-weight: normal; font-size: 16px; line-height: 1.8; font-family: 'Times New Roman', Times, serif; padding-left: 20px;">
+        <li>I began my journey at Ramchin Technologies Private Limited as an intern in February 2025, where I gained hands-on experience in Data Analysis.</li>
+        <li>During my internship, I primarily focused on data analysis, working with technologies such as NumPy, Pandas, Excel, SQL, Power BI.</li>
+        <li>I was involved in tasks like cleaning and analyzing data ensuring the insightful processing of the raw data.</li>
+        <li>One of my key projects was an Income Tax Analysis, where I used Excel for data cleaning, creating pivot tables, and designing interactive dashboards. I also replicated and enhanced this project using Power BI, developing visual reports and dashboards to present tax data clearly and effectively.</li>
+        <li>My time as an intern provided me with a deep understanding of data analysis, and I collaborated closely with the analyzing team to ensure seamless integration of features and functionalities.</li>
+      </ul>
+    </div>
+
+    <!-- Right Section -->
+    <div style="flex: 1 1 35%; background-color: #fff;">
+      <h3 style="color: #3b0a75; font-size: 22px; font-weight: 600; margin-bottom: 10px;">Summary</h3>
+      <div style="width: 50px; height: 3px; background-color: #6c2bc9; margin-bottom: 20px;"></div>
+
+      <p style="font-size: 16px; line-height: 1.8;">
+        <strong>FREELANCING + INTERNSHIP</strong><br>
+        Feb 2025 – Present (6+ Months)
+      </p>
+      <p style="font-size: 16px; line-height: 1.8;">
+        <strong>PERSONAL DATA ANALYSIS PROJECTS</strong><br>
+        20+
+      </p>
+
+      <a href="#projects" style="display: inline-block; margin-top: 20px; padding: 12px 24px; background-color: #6c2bc9; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s;">
+        My Projects
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Projects Section -->
+<section id="projects" style="padding: 60px 20px; background-color: #fff; text-align: center;">
+
+  <!-- Title -->
+  <h2 style="font-size: 36px; font-weight: 700; color: rgb(81, 0, 128);">Portfolio Projects</h2>
+  <div style="width: 60px; height: 3px; background-color: rgb(81, 0, 128); margin: 10px auto 30px;"></div>
+
+  <!-- Filter Tabs -->
+  <div class="project-tabs" style="margin-bottom: 20px;">
+    <span class="tab-link active" data-filter="all" style="cursor: pointer; margin: 0 10px; color: rgb(81, 0, 128); font-weight: bold;">All</span>
+    <span class="tab-link" data-filter="python" style="cursor: pointer; margin: 0 10px; color: rgb(81, 0, 128); font-weight: bold;">Python</span>
+    <span class="tab-link" data-filter="sql" style="cursor: pointer; margin: 0 10px; color: rgb(81, 0, 128); font-weight: bold;">SQL</span>
+    <span class="tab-link" data-filter="powerbi" style="cursor: pointer; margin: 0 10px; color: rgb(81, 0, 128); font-weight: bold;">Power BI</span>
+    <span class="tab-link" data-filter="tableau" style="cursor: pointer; margin: 0 10px; color: rgb(81, 0, 128); font-weight: bold;">Tableau</span>
+    <span class="tab-link" data-filter="excel" style="cursor: pointer; margin: 0 10px; color: rgb(81, 0, 128); font-weight: bold;">Excel</span>
+  </div>
+
+  <!-- Project Cards -->
+  <div class="project-grid" style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  ">
+    <!-- Card 1 -->
+    <div class="project-card" data-category="excel" style="background-color: #fff; padding: 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <img src="image/finance.jpg" alt="Excel Dashboard" style="width: 100%; border-radius: 8px;" />
+      <div class="tag" style="margin-top: 10px; font-weight: bold; color: rgb(255, 255, 255);">EXCEL</div>
+      <a href="finance.html" style="color: black; font-weight: bold; text-decoration: none;">
+        <h4>Finance Dashboard</h4>
+      </a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="project-card" data-category="excel" style="background-color: #fff; padding: 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <img src="image/inventory.png" alt="Inventory Dashboard" style="width: 100%; border-radius: 8px;" />
+      <div class="tag" style="margin-top: 10px; font-weight: bold; color: rgb(255, 255, 255);">EXCEL</div>
+      <a href="inventory.html" style="color: black; font-weight: bold; text-decoration: none;">
+        <h4>Inventory Dashboard</h4>
+      </a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="project-card" data-category="excel" style="background-color: #fff; padding: 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <img src="image/sales di.jpg" alt="Sales Distribution Dashboard" style="width: 100%; border-radius: 8px;" />
+      <div class="tag" style="margin-top: 10px; font-weight: bold; color: rgb(255, 255, 255);">EXCEL</div>
+      <a href="salesdist.html" style="color: black; font-weight: bold; text-decoration: none;">
+        <h4>Sales Distribution Dashboard</h4>
+      </a>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="project-card" data-category="powerbi" style="background-color: #fff; padding: 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <img src="image/salesa.jpg" alt="Sales Analysis Dashboard" style="width: 100%; border-radius: 8px;" />
+      <div class="tag" style="margin-top: 10px; font-weight: bold; color: rgb(255, 255, 255);">POWER BI</div>
+      <a href="salesa.html" style="color: black; font-weight: bold; text-decoration: none;">
+        <h4>Sales Analysis Dashboard</h4>
+      </a>
+    </div>
+  </div>
+
+  <!-- JavaScript for Filtering -->
+  <script>
+    const tabs = document.querySelectorAll('.tab-link');
+    const cards = document.querySelectorAll('.project-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function(e) {
+        e.preventDefault();
+        tabs.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+
+        const filter = this.getAttribute('data-filter');
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          card.style.display = (filter === 'all' || category === filter) ? 'block' : 'none';
+        });
+      });
+    });
+  </script>
+</section>
+
+
+
+  <!-- Contact Section -->
+<section id="contact" style="padding: 60px 20px; background-color: #fff; color: rgb(81, 0, 128); text-align: center;">
+  <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 10px;">Let's Connect!</h2>
+  <div style="width: 60px; height: 3px; background-color: rgb(81, 0, 128); margin: 10px auto 30px;"></div>
+
+  <div class="contact-container">
+    <!-- Location -->
+    <div class="contact-card">
+      <div class="contact-icon">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <div class="contact-info">
+        <strong>Location:</strong>
+        <p>India</p>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="contact-card">
+      <div class="contact-icon">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div class="contact-info">
+        <strong>Email:</strong>
+        <p>
+          <a href="mailto:kalishwarialiasdevir@gmail.com">kalishwarialiasdevir@gmail.com</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="contact-card">
+      <div class="contact-icon">
+        <i class="fab fa-linkedin-in"></i>
+      </div>
+      <div class="contact-info">
+        <strong>LinkedIn:</strong>
+        <p>
+          <a href="https://www.linkedin.com/in/kalishwarialiasdevi30/" target="_blank">Let's chat!</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- GitHub -->
+    <div class="contact-card">
+      <div class="contact-icon">
+        <i class="fab fa-github"></i>
+      </div>
+      <div class="contact-info">
+        <strong>Github:</strong>
+        <p>
+          <a href="https://github.com/KalishwariAliasDevi" target="_blank">View my repositories</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="background-color: rgb(51, 0, 100); padding: 20px 0;">
+  <p style="text-align: center; color: white; margin: 0;">&copy; 2025 Devi | All Rights Reserved</p>
+</footer>
+
+
   <!-- Loader -->
   <div id="page-loader">
     <div class="loader-text">Loading...</div>
   </div>
 
-  <!-- Loader Script -->
   <script>
-    document.querySelectorAll('a[href$=".html"]').forEach(link => {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const href = this.getAttribute('href');
-        const loader = document.getElementById('page-loader');
-        if (loader) {
-          loader.style.display = 'flex';
-          document.body.style.overflow = "hidden"; // prevent flicker
-          setTimeout(() => {
-            window.location.href = href;
-          }, 1000);
-        } else {
-          window.location.href = href;
+    // Highlight active section in navbar
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      document.querySelectorAll('section').forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
         }
       });
     });
   </script>
-
 </body>
 </html>
